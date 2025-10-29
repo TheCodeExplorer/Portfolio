@@ -1,0 +1,429 @@
+/* General Body Styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    padding: 4rem 2rem;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content .hero-statement {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #222;
+    padding: 0.5rem 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Sections */
+section {
+    padding: 2rem;
+    margin: 0 2rem;
+    border-bottom: 1px solid #ddd;
+}
+
+h2 {
+    color: #333;
+}
+
+/* About Me Section */
+#about {
+    background-color: #fff;
+    padding: 4rem 2rem;
+    border-bottom: 1px solid #ddd;
+}
+
+#about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+#about .about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #007bff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#about .about-text {
+    flex: 1;
+}
+
+#about .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 2rem;
+}
+
+.skills-list li {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.skills-list li:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.testimonial {
+    background-color: #f9f9f9;
+    border-left: 4px solid #007bff;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+
+.testimonial-author {
+    text-align: right;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Projects */
+#project-filters {
+    margin-bottom: 1rem;
+}
+
+.filter-btn {
+    background: none;
+    border: 1px solid #333;
+    color: #333;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+.filter-btn.active {
+    background: #333;
+    color: white;
+}
+
+.project {
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.project-summary {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.case-study-link {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.case-study-link:hover {
+    background-color: #0056b3;
+}
+
+/* Case Study Detail */
+#case-study-detail {
+    padding: 2rem;
+    margin: 0 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#case-study-detail h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+#case-study-detail .role {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+#case-study-detail h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+#case-study-detail p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Contact */
+#contact {
+    background-color: #e4e4e4;
+    padding: 2rem;
+}
+
+#contact p {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#contact p strong {
+    color: #333;
+}
+
+#contact .social-links {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#contact .social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#contact .social-links a:hover {
+    text-decoration: underline;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+#contact-form .cta-button {
+    width: auto;
+    padding: 0.8rem 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+/* Resume Page Styling */
+#resume-content {
+    padding: 2rem;
+    margin: 0 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#resume-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    text-align: center;
+}
+
+#resume-content .contact-info {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+#resume-content h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+#resume-content h3 {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+#resume-content .date {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 0.5rem;
+}
+
+#resume-content ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#resume-content ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #333;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content .hero-statement {
+        font-size: 1rem;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    section {
+        margin: 0 1rem;
+        padding: 1.5rem;
+    }
+
+    .project {
+        padding: 0.8rem;
+    }
+
+    #contact-form {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content .hero-statement {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}

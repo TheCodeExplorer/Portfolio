@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="port.css">
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+</head>
+<body>
+    <header>
+        <div class="hero-content">
+            <h1>[Your Name], [Your Professional Title]</h1>
+            <p class="hero-statement">A short, punchy sentence or two summarizing your unique value.</p>
+            <a href="#contact" class="cta-button">View My Work / Contact Me</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="resume.html">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="https://via.placeholder.com/150x150?text=Your+Photo" alt="Your Professional Photo" class="profile-photo">
+            <div class="about-text">
+                <p>Hello! I'm [Your Name], a [Your Professional Title] with a passion for [Your Passion/What drives your work]. My journey in [Your Field] began [briefly describe how you started]. I thrive on [describe what you enjoy in your work, e.g., solving complex problems, creating intuitive designs, building robust applications].</p>
+                <p>Welcome to my portfolio! I am a <span id="typed-text"></span></p>
+            </div>
+        </div>
+
+        <h3>Skills & Expertise</h3>
+        <ul class="skills-list">
+            <li>HTML5, CSS3, JavaScript (ES6+)</li>
+            <li>React, Vue.js, Angular</li>
+            <li>Node.js, Python, Java</li>
+            <li>UI/UX Design, Figma, Adobe XD</li>
+            <li>Git, Agile Methodologies</li>
+        </ul>
+
+        <h3>Education & Experience</h3>
+        <p><strong>[Your Degree/Certification]</strong> - [Your University/Institution], [Year]</p>
+        <p><strong>[Your Previous Role]</strong> - [Previous Company], [Start Date] - [End Date]</p>
+        <p><strong>[Another Previous Role]</strong> - [Another Company], [Start Date] - [End Date]</p>
+
+        <p><a href="your-resume.pdf" download class="cta-button">Download My Resume (PDF)</a></p>
+
+
+
+        <h3>Testimonials</h3>
+        <div class="testimonial">
+            <p>"[Your Name] is an exceptional [skill/trait]. They consistently deliver high-quality work and are a pleasure to collaborate with."</p>
+            <p class="testimonial-author">- [Client/Manager Name], [Title]</p>
+        </div>
+        <div class="testimonial">
+            <p>"I was particularly impressed by [Your Name]'s ability to [specific achievement]. Their contributions were invaluable to the success of our project."</p>
+            <p class="testimonial-author">- [Client/Manager Name], [Title]</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div id="project-filters">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="web">Web Development</button>
+            <button class="filter-btn" data-category="design">Design</button>
+        </div>
+        <div class="project" data-category="web">
+            <img src="https://via.placeholder.com/300x200?text=Project+1+Image" alt="Project 1 Image">
+            <h3>Project 1: Web Application</h3>
+            <a href="project1-case-study.html" class="case-study-link">View Case Study</a>
+        </div>
+        <div class="project" data-category="design">
+            <img src="https://via.placeholder.com/300x200?text=Project+2+Image" alt="Project 2 Image">
+            <h3>Project 2: UI/UX Design</h3>
+            <p class="project-summary">A brief summary of Project 2, highlighting its design principles and impact.</p>
+            <a href="project2-case-study.html" class="case-study-link">View Case Study</a>
+        </div>
+        <div class="project" data-category="web">
+            <img src="https://via.placeholder.com/300x200?text=Project+3+Image" alt="Project 3 Image">
+            <h3>Project 3: E-commerce Site</h3>
+            <p class="project-summary">A brief summary of Project 3, focusing on its e-commerce functionalities and security.</p>
+            <a href="#" class="case-study-link">View Case Study</a>
+        </div>
+        <div class="project" data-category="design">
+            <img src="https://via.placeholder.com/300x200?text=Project+4+Image" alt="Project 4 Image">
+            <h3>Project 4: Brand Identity</h3>
+            <p class="project-summary">A brief summary of Project 4, detailing the brand identity development process.</p>
+            <a href="#" class="case-study-link">View Case Study</a>
+        </div>
+        <div class="project" data-category="web">
+            <img src="https://via.placeholder.com/300x200?text=Project+5+Image" alt="Project 5 Image">
+            <h3>Project 5: Portfolio Website</h3>
+            <p class="project-summary">A brief summary of Project 5, explaining the design and development of this portfolio.</p>
+            <a href="#" class="case-study-link">View Case Study</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+        <p><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+            <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
+            <!-- Add more social links as needed -->
+        </div>
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject">
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My Portfolio</p>
+    </footer>
+    <script src="port.js"></script>
+</body>
+</html>
