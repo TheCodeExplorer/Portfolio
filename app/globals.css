@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #F8FAFC;
+  --surface: #FFFFFF;
+  --border: #E2E8F0;
+  --text: #0F172A;
+  --text-2: #475569;
+  --muted: #64748B;
+  --accent: #1E3A8A;
+  --accent-hover: #172554;
+  --accent-soft: #EEF2FF;
+  --accent-selection: rgba(30, 58, 138, 0.2);
+  --success: #16A34A;
+}
+
+.dark {
+  --bg: #0B1220;
+  --surface: #111A2E;
+  --border: #1F2A44;
+  --text: #E6EAF2;
+  --text-2: #9AA6BF;
+  --muted: #7C8AA5;
+  --accent: #8FA8FF;
+  --accent-hover: #B4C4FF;
+  --accent-soft: #16213D;
+  --accent-selection: rgba(143, 168, 255, 0.2);
+  --success: #22C55E;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: var(--font-geist-sans), sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--accent-selection);
+  color: inherit;
+}
+
+[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Custom cursor hide rule: desktop fine-pointer only */
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+  input, textarea, select, [contenteditable="true"] {
+    cursor: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Typography styles */
+.text-h1 {
+  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.text-h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.section-label {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.chip-mono {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 12px;
+  border-radius: 6px;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.chip-mono:hover {
+  border-color: var(--accent);
+  background-color: var(--accent-soft);
+}
+
+/* Hero background faint grid */
+.hero-grid {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 60%, transparent 100%);
+}
+
+.dark .hero-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
