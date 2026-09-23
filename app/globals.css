@@ -54,15 +54,6 @@ body {
   scroll-margin-top: 80px;
 }
 
-/* Custom cursor hide rule: desktop fine-pointer only */
-@media (hover: hover) and (pointer: fine) {
-  * {
-    cursor: none !important;
-  }
-  input, textarea, select, [contenteditable="true"] {
-    cursor: auto !important;
-  }
-}
 
 :focus-visible {
   outline: 2px solid var(--accent);

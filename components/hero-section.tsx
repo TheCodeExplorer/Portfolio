@@ -11,7 +11,7 @@ export function HeroSection() {
 
   return (
     <div className="relative min-h-[calc(100vh-64px)] flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-      {/* 48px faint grid background with radial mask */}
+      {/* Faint grid background with radial mask */}
       <div
         className="hero-grid absolute inset-0 pointer-events-none"
         aria-hidden="true"
@@ -19,27 +19,27 @@ export function HeroSection() {
 
       <div className="relative z-10 w-full max-w-content mx-auto px-6 md:px-8">
         <MotionSection className="flex flex-col items-start text-left">
-          {/* Status pill with softly pulsing success dot */}
+          {/* Status pill with understated pulsing success dot */}
           <MotionItem>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-surface text-text-2 text-[13px] font-medium mb-6 select-none">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-accent/20 bg-accent-soft text-accent text-[13px] font-medium mb-6 select-none shadow-sm">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-70" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-success" />
               </span>
-              <span>{personal.statusPill}</span>
+              <span className="tracking-tight">{personal.statusPill}</span>
             </div>
           </MotionItem>
 
-          {/* H1 Heading */}
+          {/* Core Headline */}
           <MotionItem>
-            <h1 className="text-h1 text-text max-w-4xl tracking-[-0.03em] mb-6">
+            <h1 className="text-h1 text-text max-w-4xl tracking-[-0.03em] mb-6 font-semibold">
               {personal.headline}
             </h1>
           </MotionItem>
 
-          {/* Subtitle */}
+          {/* Subtitle / Bio */}
           <MotionItem>
-            <p className="text-[17px] leading-body text-text-2 max-w-[620px] mb-8">
+            <p className="text-[17px] md:text-[18px] leading-body text-text-2 max-w-[640px] mb-8 font-normal">
               {personal.heroBio}
             </p>
           </MotionItem>
@@ -60,7 +60,7 @@ export function HeroSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Download className="w-4 h-4 mr-1.5 text-muted group-hover:text-accent" />
+                  <Download className="w-4 h-4 mr-1.5 text-muted group-hover:text-accent transition-colors" />
                   <span>Download resume</span>
                   <ArrowRight className="w-4 h-4 ml-1.5 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0.5 transition-all duration-150" />
                 </a>
@@ -90,10 +90,10 @@ export function HeroSection() {
             </div>
           </MotionItem>
 
-          {/* Location metadata in mono */}
+          {/* Location metadata */}
           <MotionItem>
             <div className="flex items-center gap-1.5 font-mono text-[13px] text-muted">
-              <MapPin className="w-3.5 h-3.5" />
+              <MapPin className="w-3.5 h-3.5 text-muted" />
               <span>{personal.location}</span>
             </div>
           </MotionItem>

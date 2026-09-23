@@ -14,7 +14,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button";
 
     const baseStyles =
-      "inline-flex items-center justify-center font-medium transition-colors duration-150 rounded-btn focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 disabled:opacity-50 disabled:pointer-events-none group select-none";
+      "inline-flex items-center justify-center font-medium transition-colors duration-150 rounded-btn cursor-pointer focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 disabled:opacity-50 disabled:pointer-events-none group select-none";
 
     const sizeStyles = {
       default: "h-[44px] px-5 text-[15px]",

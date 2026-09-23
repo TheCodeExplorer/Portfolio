@@ -15,21 +15,21 @@ export function ContactSection() {
       aria-labelledby="contact-heading"
       className="py-16 md:py-24 max-w-content mx-auto px-6 md:px-8 border-t border-border"
     >
-      <MotionItem className="mb-8">
+      <MotionItem className="mb-6">
         <span id="contact-heading" className="section-label">
-          05 / Contact
+          06 / Contact
         </span>
       </MotionItem>
 
       <div className="max-w-2xl">
         <MotionItem>
-          <h2 className="text-h2 text-text mb-4 font-semibold">
+          <h2 className="text-2xl md:text-4xl text-text mb-4 font-semibold tracking-tight">
             {contact.heading}
           </h2>
         </MotionItem>
 
         <MotionItem>
-          <p className="text-[17px] leading-body text-text-2 mb-8">
+          <p className="text-[16px] md:text-[17px] leading-body text-text-2 mb-8">
             {contact.subheading}
           </p>
         </MotionItem>
@@ -39,7 +39,7 @@ export function ContactSection() {
             <Button asChild className="group">
               <a href={`mailto:${personal.email}`}>
                 <Mail className="w-4 h-4 mr-2" />
-                <span>Email me</span>
+                <span>Send Email</span>
                 <ArrowRight className="w-4 h-4 ml-1.5 transition-transform duration-150 group-hover:translate-x-0.5" />
               </a>
             </Button>

@@ -4,22 +4,23 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
-import { CustomCursor } from "@/components/custom-cursor";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Venkatesh Talluri — Full-Stack & IoT Developer",
+  title: "Venkatesh Talluri — Developer Portfolio",
   description:
-    "Personal portfolio of Venkatesh Talluri, B.Tech Computer Science student specializing in full-stack web applications and IoT systems. Open to internships and entry-level developer roles.",
+    "Personal portfolio of Venkatesh Talluri, Computer Science undergraduate building practical web applications, systems, and embedded projects. Open to early-career software engineering opportunities.",
   keywords: [
     "Venkatesh Talluri",
     "Portfolio",
-    "Full-Stack Developer",
-    "IoT Developer",
-    "Software Engineer",
+    "Software Developer",
+    "Web Development",
     "Next.js",
     "React",
+    "PostgreSQL",
+    "Prisma",
+    "Embedded Systems",
     "Arduino",
   ],
   authors: [{ name: "Venkatesh Talluri" }],
@@ -27,17 +28,17 @@ export const metadata: Metadata = {
     icon: "/favicon.svg",
   },
   openGraph: {
-    title: "Venkatesh Talluri — Full-Stack & IoT Developer",
+    title: "Venkatesh Talluri — Developer Portfolio",
     description:
-      "B.Tech Computer Science student at QIS College of Engineering and Technology. Open to software engineering internships and entry-level developer roles.",
+      "Computer Science undergraduate at QIS College of Engineering and Technology. Open to early-career software development and engineering opportunities.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Venkatesh Talluri — Full-Stack & IoT Developer",
+    title: "Venkatesh Talluri — Developer Portfolio",
     description:
-      "B.Tech Computer Science student specializing in full-stack web applications and IoT systems.",
+      "Computer Science undergraduate building practical software, systems, and web applications.",
   },
 };
 
@@ -68,7 +69,6 @@ export default function RootLayout({
           </a>
 
           <ScrollProgress />
-          <CustomCursor />
           <Navbar />
           <main id="main-content" className="flex-1">
             {children}

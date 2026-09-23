@@ -15,23 +15,32 @@ export function SkillsSection() {
       aria-labelledby="skills-heading"
       className="py-16 md:py-24 max-w-content mx-auto px-6 md:px-8 border-t border-border"
     >
-      <MotionItem className="mb-8">
+      <MotionItem className="mb-4">
         <span id="skills-heading" className="section-label">
           03 / Skills
         </span>
       </MotionItem>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <MotionItem className="mb-8">
+        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-text">
+          Technologies & Capabilities
+        </h2>
+        <p className="text-[15px] text-text-2 mt-1">
+          Languages, frameworks, database systems, and embedded tooling applied across projects.
+        </p>
+      </MotionItem>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {skills.map((group, idx) => (
           <MotionItem key={idx} className="h-full">
-            <SpotlightCard className="h-full flex flex-col justify-start">
+            <SpotlightCard className="h-full flex flex-col justify-start p-5">
               {/* Mono Label */}
-              <h3 className="font-mono text-[13px] uppercase tracking-wider text-muted font-medium mb-4">
+              <h3 className="font-mono text-[13px] uppercase tracking-wider text-muted font-medium mb-3 pb-2 border-b border-border/50">
                 {group.title}
               </h3>
 
               {/* Chips */}
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 pt-1">
                 {group.skills.map((skill, sIdx) => (
                   <Badge key={sIdx} className="text-[13px]">
                     {skill}

@@ -6,13 +6,11 @@ import { cn } from "@/lib/utils";
 interface SpotlightCardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
-  isProject?: boolean;
 }
 
 export function SpotlightCard({
   children,
   className = "",
-  isProject = false,
   ...props
 }: SpotlightCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -43,7 +41,6 @@ export function SpotlightCard({
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      data-cursor={isProject ? "project" : undefined}
       className={cn(
         "relative overflow-hidden rounded-card bg-surface border border-border p-6",
         "transition-[transform,border-color] duration-200 ease-out",
