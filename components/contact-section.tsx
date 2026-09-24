@@ -15,7 +15,7 @@ export function ContactSection() {
       aria-labelledby="contact-heading"
       className="py-16 md:py-24 max-w-content mx-auto px-6 md:px-8 border-t border-border"
     >
-      <MotionItem className="mb-6">
+      <MotionItem className="mb-3">
         <span id="contact-heading" className="section-label">
           06 / Contact
         </span>
@@ -23,13 +23,13 @@ export function ContactSection() {
 
       <div className="max-w-2xl">
         <MotionItem>
-          <h2 className="text-2xl md:text-4xl text-text mb-4 font-semibold tracking-tight">
+          <h2 className="headline-section mb-3">
             {contact.heading}
           </h2>
         </MotionItem>
 
         <MotionItem>
-          <p className="text-[16px] md:text-[17px] leading-body text-text-2 mb-8">
+          <p className="body-regular text-text-2 mb-8">
             {contact.subheading}
           </p>
         </MotionItem>
@@ -51,7 +51,7 @@ export function ContactSection() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2"
               >
-                <Github className="w-4 h-4" />
+                <Github className="w-4 h-4 text-text-muted group-hover:text-text" />
                 <span>GitHub</span>
               </a>
             </Button>
@@ -63,7 +63,7 @@ export function ContactSection() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2"
               >
-                <Linkedin className="w-4 h-4" />
+                <Linkedin className="w-4 h-4 text-text-muted group-hover:text-text" />
                 <span>LinkedIn</span>
               </a>
             </Button>

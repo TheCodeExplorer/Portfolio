@@ -10,8 +10,8 @@ export function HeroSection() {
   const { personal } = portfolioData;
 
   return (
-    <div className="relative min-h-[calc(100vh-64px)] flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden hero-bg">
-      {/* Faint grid background with radial mask */}
+    <div className="relative min-h-[calc(100vh-64px)] flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+      {/* Precision grid background with radial mask */}
       <div
         className="grid-bg absolute inset-0 pointer-events-none"
         aria-hidden="true"
@@ -19,27 +19,27 @@ export function HeroSection() {
 
       <div className="relative z-10 w-full max-w-content mx-auto px-6 md:px-8">
         <MotionSection className="flex flex-col items-start text-left">
-          {/* Status pill with understated pulsing success dot */}
+          {/* Status pill with subtle cyan accent indicator */}
           <MotionItem>
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-accent-border bg-accent-soft text-accent text-[13px] font-medium mb-6 select-none shadow-sm">
+            <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-[4px] border border-border bg-surface-elevated text-accent text-[12px] font-mono tracking-wide mb-6 select-none">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 status-dot" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
               </span>
-              <span className="tracking-tight">{personal.statusPill}</span>
+              <span>{personal.statusPill}</span>
             </div>
           </MotionItem>
 
-          {/* Core Headline */}
+          {/* Core Display Headline */}
           <MotionItem>
-            <h1 className="text-h1 text-text max-w-4xl tracking-[-0.03em] mb-6 font-semibold">
+            <h1 className="display-hero max-w-4xl mb-6">
               {personal.headline}
             </h1>
           </MotionItem>
 
           {/* Subtitle / Bio */}
           <MotionItem>
-            <p className="text-[17px] md:text-[18px] leading-body text-text-2 max-w-[640px] mb-8 font-normal">
+            <p className="body-large max-w-[660px] mb-8">
               {personal.heroBio}
             </p>
           </MotionItem>
@@ -60,7 +60,7 @@ export function HeroSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Download className="w-4 h-4 mr-1.5 text-muted group-hover:text-accent transition-colors" />
+                  <Download className="w-4 h-4 mr-1.5 text-text-muted group-hover:text-accent transition-colors" />
                   <span>Download resume</span>
                   <ArrowRight className="w-4 h-4 ml-1.5 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0.5 transition-all duration-150" />
                 </a>
@@ -92,8 +92,8 @@ export function HeroSection() {
 
           {/* Location metadata */}
           <MotionItem>
-            <div className="flex items-center gap-1.5 font-mono text-[13px] text-muted">
-              <MapPin className="w-3.5 h-3.5 text-muted" />
+            <div className="flex items-center gap-1.5 metadata-micro">
+              <MapPin className="w-3.5 h-3.5 text-text-muted" />
               <span>{personal.location}</span>
             </div>
           </MotionItem>

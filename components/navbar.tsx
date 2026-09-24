@@ -86,16 +86,16 @@ export function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                className={`relative h-full flex items-center text-[14px] font-medium transition-colors ${
+                className={`relative h-full flex items-center text-[0.875rem] font-medium transition-colors ${
                   isActive
                     ? "text-text"
-                    : "text-text-2 hover:text-accent"
+                    : "text-text-2 hover:text-text"
                 }`}
               >
                 {item.label}
                 {isActive && (
                   <span
-                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-accent"
+                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary"
                     aria-hidden="true"
                   />
                 )}

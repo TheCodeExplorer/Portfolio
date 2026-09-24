@@ -3,88 +3,114 @@
 @tailwind utilities;
 
 /* ==========================================================
-   Portfolio color system — colors only, no layout changes.
-   Light = default. Dark = .dark (next-themes) or [data-theme="dark"].
-   Paste into globals.css, replacing your current color variables
-   (or keep your variable names and copy just the values).
+   Technical Precision Design System
+   Tailored for senior engineering leaders, recruiters & managers.
    ========================================================== */
 
 :root {
-  /* Backgrounds */
-  --bg:            #F8FAFC;   /* page */
-  --surface:       #FFFFFF;   /* cards, navbar, inputs */
-  --surface-2:     #F1F5F9;   /* tags, hover fills, code chips */
+  /* Foundation & Surfaces */
+  --bg:                 #090D16;   /* Global Canvas: Matte, neutral dark */
+  --surface:            #0D121F;   /* Surface / Card: Standard container */
+  --surface-elevated:   #161F33;   /* Elevated Surface: Nested panels, chips */
+  --surface-2:          #161F33;
 
-  /* Text */
-  --text:          #0F172A;   /* headings, names, key labels */
-  --text-2:        #334155;   /* body, descriptions */
-  --text-muted:    #5B6B82;   /* mono labels, dates, captions */
-  --muted:         var(--text-muted);
+  /* Structure & Boundaries */
+  --border:             #1E293B;   /* Default Border: Crisp boundary */
+  --border-interactive: #334155;   /* Interactive / Focus Border */
+  --border-strong:      #334155;
 
-  /* Borders */
-  --border:        #E2E8F0;   /* cards, dividers */
-  --border-strong: #CBD5E1;   /* tag outlines, secondary buttons, focus-adjacent */
+  /* Accents & Indicators */
+  --primary:            #0284C7;   /* Primary Action: Direct sky-blue */
+  --primary-hover:      #0369A1;
+  --accent:             #38BDF8;   /* Accent / Highlight: Sky-cyan */
+  --accent-soft:        rgba(56, 189, 248, 0.12);
+  --accent-border:      rgba(56, 189, 248, 0.30);
+  --on-accent:          #F8FAFC;
 
-  /* Accent (deep blue) */
-  --accent:        #1E3A8A;
-  --accent-hover:  #172F73;
-  --accent-active: #122560;
-  --accent-soft:   #E8EEFC;   /* badge / highlight fill */
-  --accent-border: #C3D0F4;
-  --on-accent:     #FFFFFF;   /* text on filled accent */
+  /* Typography Layers */
+  --text:               #F8FAFC;   /* Primary Text: Pure light slate */
+  --text-2:             #94A3B8;   /* Secondary Text: Balanced neutral slate */
+  --text-muted:         #64748B;   /* Metadata / Muted */
+  --muted:              #64748B;
 
   /* Status */
-  --success:       #15803D;
-  --success-soft:  #DCFCE7;
-  --progress:      #B45309;   /* "In progress" badge */
-  --progress-soft: #FEF3C7;
+  --success:            #4ADE80;
+  --progress:           #FBBF24;
+  --progress-soft:      rgba(251, 191, 36, 0.12);
 
   /* Effects */
-  --grid-line:     rgba(15, 23, 42, 0.045);
-  --hero-glow:     radial-gradient(60% 50% at 20% 0%, rgba(30, 58, 138, 0.07), transparent 70%);
-  --gradient-accent: linear-gradient(90deg, #1E3A8A 0%, #4F6BED 100%); /* scroll-progress bar only */
-  --card-shadow-hover: 0 10px 28px -14px rgba(15, 23, 42, 0.18);
-  --focus-ring:    0 0 0 3px rgba(30, 58, 138, 0.28);
-  --selection-bg:  #C3D0F4;
-  --selection-text:#0F172A;
+  --grid-line:          rgba(30, 41, 59, 0.35);
+  --focus-ring:         0 0 0 2px #38BDF8;
+  --selection-bg:       rgba(56, 189, 248, 0.25);
+  --selection-text:     #F8FAFC;
 }
 
-.dark,
-[data-theme="dark"] {
-  --bg:            #0B1220;
-  --surface:       #111A2E;
-  --surface-2:     #182339;
+/* Light mode fallback retaining clean technical structure */
+html:not(.dark) {
+  --bg:                 #F8FAFC;
+  --surface:            #FFFFFF;
+  --surface-elevated:   #F1F5F9;
+  --surface-2:          #F1F5F9;
 
-  --text:          #F1F5F9;
-  --text-2:        #B8C3D9;
-  --text-muted:    #8896B0;
-  --muted:         var(--text-muted);
+  --border:             #E2E8F0;
+  --border-interactive: #CBD5E1;
+  --border-strong:      #CBD5E1;
 
-  --border:        #1E2A44;
-  --border-strong: #2A3A5C;
+  --primary:            #0284C7;
+  --primary-hover:      #0369A1;
+  --accent:             #0284C7;
+  --accent-soft:        rgba(2, 132, 199, 0.08);
+  --accent-border:      rgba(2, 132, 199, 0.25);
+  --on-accent:          #FFFFFF;
 
-  --accent:        #8FA8FF;
-  --accent-hover:  #B3C4FF;
-  --accent-active: #7A96F5;
-  --accent-soft:   rgba(143, 168, 255, 0.12);
-  --accent-border: rgba(143, 168, 255, 0.30);
-  --on-accent:     #0B1220;
+  --text:               #0F172A;
+  --text-2:             #334155;
+  --text-muted:         #64748B;
+  --muted:              #64748B;
 
-  --success:       #4ADE80;
-  --success-soft:  rgba(74, 222, 128, 0.12);
-  --progress:      #FBBF24;
-  --progress-soft: rgba(251, 191, 36, 0.12);
+  --success:            #16A34A;
+  --progress:           #B45309;
+  --progress-soft:      #FEF3C7;
 
-  --grid-line:     rgba(143, 168, 255, 0.05);
-  --hero-glow:     radial-gradient(60% 50% at 20% 0%, rgba(143, 168, 255, 0.10), transparent 70%);
-  --gradient-accent: linear-gradient(90deg, #6F8CFF 0%, #B3C4FF 100%);
-  --card-shadow-hover: none;
-  --focus-ring:    0 0 0 3px rgba(143, 168, 255, 0.35);
-  --selection-bg:  rgba(143, 168, 255, 0.30);
-  --selection-text:#F1F5F9;
+  --grid-line:          rgba(15, 23, 42, 0.04);
+  --focus-ring:         0 0 0 2px #0284C7;
+  --selection-bg:       rgba(2, 132, 199, 0.2);
+  --selection-text:     #0F172A;
 }
 
-/* ---------- Base ---------- */
+.dark, [data-theme="dark"] {
+  --bg:                 #090D16;
+  --surface:            #0D121F;
+  --surface-elevated:   #161F33;
+  --surface-2:          #161F33;
+
+  --border:             #1E293B;
+  --border-interactive: #334155;
+  --border-strong:      #334155;
+
+  --primary:            #0284C7;
+  --primary-hover:      #0369A1;
+  --accent:             #38BDF8;
+  --accent-soft:        rgba(56, 189, 248, 0.12);
+  --accent-border:      rgba(56, 189, 248, 0.30);
+  --on-accent:          #F8FAFC;
+
+  --text:               #F8FAFC;
+  --text-2:             #94A3B8;
+  --text-muted:         #64748B;
+  --muted:              #64748B;
+
+  --success:            #4ADE80;
+  --progress:           #FBBF24;
+  --progress-soft:      rgba(251, 191, 36, 0.12);
+
+  --grid-line:          rgba(30, 41, 59, 0.35);
+  --focus-ring:         0 0 0 2px #38BDF8;
+  --selection-bg:       rgba(56, 189, 248, 0.25);
+  --selection-text:     #F8FAFC;
+}
+
+/* ---------- Base Architecture ---------- */
 html {
   scroll-behavior: smooth;
   background-color: var(--bg);
@@ -92,16 +118,17 @@ html {
 }
 
 body {
-  font-family: var(--font-geist-sans), sans-serif;
-  background: var(--bg);
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  background-color: var(--bg);
   color: var(--text-2);
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: 0.9375rem;
+  line-height: 1.65;
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   color: var(--text);
+  font-family: var(--font-inter), 'Inter', sans-serif;
 }
 
 ::selection {
@@ -118,150 +145,97 @@ h1, h2, h3, h4 {
   scroll-margin-top: 80px;
 }
 
-/* ---------- Links ---------- */
-a {
-  color: var(--accent);
-  transition: color 0.15s ease;
-}
-a:hover {
-  color: var(--accent-hover);
-}
-
-/* ---------- Nav ---------- */
-.nav-link {
-  color: var(--text-2);
-}
-.nav-link:hover,
-.nav-link[aria-current="true"] {
+/* ---------- Typography Utility Classes ---------- */
+.display-hero {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
   color: var(--text);
 }
-.nav-link[aria-current="true"] {
-  border-bottom-color: var(--accent);
-}
 
-/* ---------- Buttons ---------- */
-.btn-primary {
-  background: var(--accent);
-  color: var(--on-accent);
-  border: 1px solid var(--accent);
-}
-.btn-primary:hover {
-  background: var(--accent-hover);
-  border-color: var(--accent-hover);
-}
-.btn-primary:active {
-  background: var(--accent-active);
-}
-.btn-secondary {
-  background: var(--surface);
-  color: var(--text);
-  border: 1px solid var(--border-strong);
-}
-.btn-secondary:hover {
-  background: var(--surface-2);
-  border-color: var(--accent-border);
-}
-
-/* ---------- Cards (projects, skills) ---------- */
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-}
-.card:hover {
-  border-color: var(--accent-border);
-  box-shadow: var(--card-shadow-hover);
-}
-.card-title {
+.headline-section {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
   color: var(--text);
 }
-.card-desc {
+
+.headline-card {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+
+.body-large {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0em;
   color: var(--text-2);
 }
 
-/* ---------- Tags & badges ---------- */
-.tag {
-  background: var(--surface-2);
+.body-regular {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0em;
   color: var(--text-2);
-  border: 1px solid var(--border);
-}
-.badge-accent {
-  background: var(--accent-soft);
-  color: var(--accent);
-  border: 1px solid var(--accent-border);
-}
-.badge-progress {
-  background: var(--progress-soft);
-  color: var(--progress);
-}
-.status-dot {
-  background: var(--success);
 }
 
-/* ---------- Labels, dates, dividers ---------- */
-.mono-label {
+.label-strong {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+
+.label-code {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+}
+
+.metadata-micro {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
   color: var(--text-muted);
 }
-hr, .divider {
-  border-color: var(--border);
-}
-.timeline-dot {
-  background: var(--accent);
-}
-.timeline-line {
-  background: var(--border-strong);
+
+.section-label {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
 }
 
-/* ---------- Backgrounds & effects ---------- */
-.hero-bg {
-  background-image: var(--hero-glow);
-}
+/* ---------- Grid Background ---------- */
 .grid-bg {
-  background-size: 48px 48px;
+  background-size: 40px 40px;
   background-image:
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 60%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 60%, transparent 100%);
 }
+
 .scroll-progress {
-  background: var(--gradient-accent);
-}
-
-/* ---------- Typography styles ---------- */
-.text-h1 {
-  font-size: clamp(2.5rem, 6vw, 4.25rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-}
-
-.text-h2 {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
-.section-label {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
-}
-
-.chip-mono {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 12px;
-  border-radius: 6px;
-  padding: 3px 8px;
-  background-color: var(--surface);
-  color: var(--text-2);
-  border: 1px solid var(--border);
-  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
-}
-
-.chip-mono:hover {
-  border-color: var(--accent-border);
-  background-color: var(--surface-2);
-  color: var(--text);
+  background: linear-gradient(90deg, #0284C7 0%, #38BDF8 100%);
 }

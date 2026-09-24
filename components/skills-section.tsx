@@ -15,17 +15,17 @@ export function SkillsSection() {
       aria-labelledby="skills-heading"
       className="py-16 md:py-24 max-w-content mx-auto px-6 md:px-8 border-t border-border"
     >
-      <MotionItem className="mb-4">
+      <MotionItem className="mb-3">
         <span id="skills-heading" className="section-label">
           03 / Skills
         </span>
       </MotionItem>
 
       <MotionItem className="mb-8">
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-text">
+        <h2 className="headline-section">
           Technologies & Capabilities
         </h2>
-        <p className="text-[15px] text-text-2 mt-1">
+        <p className="body-regular text-text-2 mt-1">
           Languages, frameworks, database systems, and embedded tooling applied across projects.
         </p>
       </MotionItem>
@@ -35,14 +35,14 @@ export function SkillsSection() {
           <MotionItem key={idx} className="h-full">
             <SpotlightCard className="h-full flex flex-col justify-start p-5">
               {/* Mono Label */}
-              <h3 className="font-mono text-[13px] uppercase tracking-wider text-muted font-medium mb-3 pb-2 border-b border-border/50">
+              <h3 className="label-code uppercase tracking-[0.03em] text-text-muted font-semibold mb-3 pb-2 border-b border-border">
                 {group.title}
               </h3>
 
-              {/* Chips */}
+              {/* Technical Chips with Leading 6px Dot */}
               <div className="flex flex-wrap gap-2 pt-1">
                 {group.skills.map((skill, sIdx) => (
-                  <Badge key={sIdx} className="text-[13px]">
+                  <Badge key={sIdx} hasDot={true}>
                     {skill}
                   </Badge>
                 ))}

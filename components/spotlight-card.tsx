@@ -42,20 +42,18 @@ export function SpotlightCard({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        "relative overflow-hidden rounded-card bg-surface border border-border p-6",
-        "transition-[transform,border-color,box-shadow] duration-200 ease-out",
-        "hover:-translate-y-[2px] hover:border-accent-border hover:shadow-[var(--card-shadow-hover)]",
-        "motion-reduce:hover:translate-y-0",
+        "relative overflow-hidden rounded-[8px] bg-surface border border-border p-6",
+        "transition-colors duration-150 ease-out hover:border-border-interactive",
         className
       )}
       {...props}
     >
-      {/* 240px subtle spotlight at 8% accent */}
+      {/* Subtle architectural spotlight */}
       <div
-        className="pointer-events-none absolute inset-0 transition-opacity duration-300"
+        className="pointer-events-none absolute inset-0 transition-opacity duration-200"
         style={{
           opacity: isHovered ? 1 : 0,
-          background: `radial-gradient(240px circle at ${mousePos.x}px ${mousePos.y}px, color-mix(in srgb, var(--accent) 8%, transparent), transparent 80%)`,
+          background: `radial-gradient(320px circle at ${mousePos.x}px ${mousePos.y}px, rgba(56, 189, 248, 0.04), transparent 80%)`,
         }}
         aria-hidden="true"
       />

@@ -14,23 +14,23 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button";
 
     const baseStyles =
-      "inline-flex items-center justify-center font-medium transition-colors duration-150 rounded-btn cursor-pointer focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 disabled:opacity-50 disabled:pointer-events-none group select-none";
+      "inline-flex items-center justify-center font-medium transition-colors duration-150 rounded-[4px] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:opacity-50 disabled:pointer-events-none group select-none";
 
     const sizeStyles = {
-      default: "h-[44px] px-5 text-[15px]",
-      sm: "h-[36px] px-3 text-[14px]",
-      icon: "h-[44px] w-[44px] p-0 flex items-center justify-center",
+      default: "h-[40px] px-5 text-[0.875rem]",
+      sm: "h-[34px] px-3 text-[0.8125rem]",
+      icon: "h-[40px] w-[40px] p-0 flex items-center justify-center",
     }[size];
 
     const variantStyles = {
       primary:
-        "bg-accent text-white dark:text-bg hover:bg-accent-hover active:opacity-90 shadow-none",
+        "bg-primary hover:bg-primary-hover text-[#F8FAFC] font-semibold border border-transparent shadow-none",
       outline:
-        "border border-border bg-surface text-text hover:border-accent hover:text-accent active:bg-accent-soft",
+        "border border-border bg-transparent text-text hover:border-border-interactive hover:bg-surface-elevated font-medium",
       ghost:
-        "bg-transparent text-text-2 hover:text-text hover:bg-accent-soft",
+        "bg-transparent text-text-2 hover:text-text hover:bg-surface-elevated",
       icon:
-        "border border-border bg-surface text-text-2 hover:text-accent hover:border-accent active:bg-accent-soft",
+        "border border-border bg-surface text-text-2 hover:text-text hover:border-border-interactive hover:bg-surface-elevated",
     }[variant];
 
     return (
