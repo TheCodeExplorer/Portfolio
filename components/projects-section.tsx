@@ -72,7 +72,15 @@ export function ProjectsSection() {
                         {project.title}
                       </h3>
                       {project.statusTag && (
-                        <Badge variant="status">{project.statusTag}</Badge>
+                        <Badge
+                          variant={
+                            project.statusTag.toLowerCase().includes("progress")
+                              ? "progress"
+                              : "status"
+                          }
+                        >
+                          {project.statusTag}
+                        </Badge>
                       )}
                     </div>
 

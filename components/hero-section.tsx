@@ -10,10 +10,10 @@ export function HeroSection() {
   const { personal } = portfolioData;
 
   return (
-    <div className="relative min-h-[calc(100vh-64px)] flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <div className="relative min-h-[calc(100vh-64px)] flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden hero-bg">
       {/* Faint grid background with radial mask */}
       <div
-        className="hero-grid absolute inset-0 pointer-events-none"
+        className="grid-bg absolute inset-0 pointer-events-none"
         aria-hidden="true"
       />
 
@@ -21,10 +21,10 @@ export function HeroSection() {
         <MotionSection className="flex flex-col items-start text-left">
           {/* Status pill with understated pulsing success dot */}
           <MotionItem>
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-accent/20 bg-accent-soft text-accent text-[13px] font-medium mb-6 select-none shadow-sm">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-accent-border bg-accent-soft text-accent text-[13px] font-medium mb-6 select-none shadow-sm">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-success" />
+                <span className="relative inline-flex rounded-full h-2 w-2 status-dot" />
               </span>
               <span className="tracking-tight">{personal.statusPill}</span>
             </div>

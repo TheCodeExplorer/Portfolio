@@ -43,8 +43,8 @@ export function SpotlightCard({
       onMouseLeave={handleMouseLeave}
       className={cn(
         "relative overflow-hidden rounded-card bg-surface border border-border p-6",
-        "transition-[transform,border-color] duration-200 ease-out",
-        "hover:-translate-y-[2px] hover:border-accent/40",
+        "transition-[transform,border-color,box-shadow] duration-200 ease-out",
+        "hover:-translate-y-[2px] hover:border-accent-border hover:shadow-[var(--card-shadow-hover)]",
         "motion-reduce:hover:translate-y-0",
         className
       )}

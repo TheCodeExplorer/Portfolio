@@ -2,34 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================================
+   Portfolio color system — colors only, no layout changes.
+   Light = default. Dark = .dark (next-themes) or [data-theme="dark"].
+   Paste into globals.css, replacing your current color variables
+   (or keep your variable names and copy just the values).
+   ========================================================== */
+
 :root {
-  --bg: #F8FAFC;
-  --surface: #FFFFFF;
-  --border: #E2E8F0;
-  --text: #0F172A;
-  --text-2: #475569;
-  --muted: #64748B;
-  --accent: #1E3A8A;
-  --accent-hover: #172554;
-  --accent-soft: #EEF2FF;
-  --accent-selection: rgba(30, 58, 138, 0.2);
-  --success: #16A34A;
+  /* Backgrounds */
+  --bg:            #F8FAFC;   /* page */
+  --surface:       #FFFFFF;   /* cards, navbar, inputs */
+  --surface-2:     #F1F5F9;   /* tags, hover fills, code chips */
+
+  /* Text */
+  --text:          #0F172A;   /* headings, names, key labels */
+  --text-2:        #334155;   /* body, descriptions */
+  --text-muted:    #5B6B82;   /* mono labels, dates, captions */
+  --muted:         var(--text-muted);
+
+  /* Borders */
+  --border:        #E2E8F0;   /* cards, dividers */
+  --border-strong: #CBD5E1;   /* tag outlines, secondary buttons, focus-adjacent */
+
+  /* Accent (deep blue) */
+  --accent:        #1E3A8A;
+  --accent-hover:  #172F73;
+  --accent-active: #122560;
+  --accent-soft:   #E8EEFC;   /* badge / highlight fill */
+  --accent-border: #C3D0F4;
+  --on-accent:     #FFFFFF;   /* text on filled accent */
+
+  /* Status */
+  --success:       #15803D;
+  --success-soft:  #DCFCE7;
+  --progress:      #B45309;   /* "In progress" badge */
+  --progress-soft: #FEF3C7;
+
+  /* Effects */
+  --grid-line:     rgba(15, 23, 42, 0.045);
+  --hero-glow:     radial-gradient(60% 50% at 20% 0%, rgba(30, 58, 138, 0.07), transparent 70%);
+  --gradient-accent: linear-gradient(90deg, #1E3A8A 0%, #4F6BED 100%); /* scroll-progress bar only */
+  --card-shadow-hover: 0 10px 28px -14px rgba(15, 23, 42, 0.18);
+  --focus-ring:    0 0 0 3px rgba(30, 58, 138, 0.28);
+  --selection-bg:  #C3D0F4;
+  --selection-text:#0F172A;
 }
 
-.dark {
-  --bg: #0B1220;
-  --surface: #111A2E;
-  --border: #1F2A44;
-  --text: #E6EAF2;
-  --text-2: #9AA6BF;
-  --muted: #7C8AA5;
-  --accent: #8FA8FF;
-  --accent-hover: #B4C4FF;
-  --accent-soft: #16213D;
-  --accent-selection: rgba(143, 168, 255, 0.2);
-  --success: #22C55E;
+.dark,
+[data-theme="dark"] {
+  --bg:            #0B1220;
+  --surface:       #111A2E;
+  --surface-2:     #182339;
+
+  --text:          #F1F5F9;
+  --text-2:        #B8C3D9;
+  --text-muted:    #8896B0;
+  --muted:         var(--text-muted);
+
+  --border:        #1E2A44;
+  --border-strong: #2A3A5C;
+
+  --accent:        #8FA8FF;
+  --accent-hover:  #B3C4FF;
+  --accent-active: #7A96F5;
+  --accent-soft:   rgba(143, 168, 255, 0.12);
+  --accent-border: rgba(143, 168, 255, 0.30);
+  --on-accent:     #0B1220;
+
+  --success:       #4ADE80;
+  --success-soft:  rgba(74, 222, 128, 0.12);
+  --progress:      #FBBF24;
+  --progress-soft: rgba(251, 191, 36, 0.12);
+
+  --grid-line:     rgba(143, 168, 255, 0.05);
+  --hero-glow:     radial-gradient(60% 50% at 20% 0%, rgba(143, 168, 255, 0.10), transparent 70%);
+  --gradient-accent: linear-gradient(90deg, #6F8CFF 0%, #B3C4FF 100%);
+  --card-shadow-hover: none;
+  --focus-ring:    0 0 0 3px rgba(143, 168, 255, 0.35);
+  --selection-bg:  rgba(143, 168, 255, 0.30);
+  --selection-text:#F1F5F9;
 }
 
+/* ---------- Base ---------- */
 html {
   scroll-behavior: smooth;
   background-color: var(--bg);
@@ -38,29 +93,141 @@ html {
 
 body {
   font-family: var(--font-geist-sans), sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
+  background: var(--bg);
+  color: var(--text-2);
   font-size: 17px;
   line-height: 1.7;
   overflow-x: hidden;
 }
 
+h1, h2, h3, h4 {
+  color: var(--text);
+}
+
 ::selection {
-  background-color: var(--accent-selection);
-  color: inherit;
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
 }
 
 [id] {
   scroll-margin-top: 80px;
 }
 
-
-:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
+/* ---------- Links ---------- */
+a {
+  color: var(--accent);
+  transition: color 0.15s ease;
+}
+a:hover {
+  color: var(--accent-hover);
 }
 
-/* Typography styles */
+/* ---------- Nav ---------- */
+.nav-link {
+  color: var(--text-2);
+}
+.nav-link:hover,
+.nav-link[aria-current="true"] {
+  color: var(--text);
+}
+.nav-link[aria-current="true"] {
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  background: var(--accent);
+  color: var(--on-accent);
+  border: 1px solid var(--accent);
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+.btn-primary:active {
+  background: var(--accent-active);
+}
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+.btn-secondary:hover {
+  background: var(--surface-2);
+  border-color: var(--accent-border);
+}
+
+/* ---------- Cards (projects, skills) ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.card:hover {
+  border-color: var(--accent-border);
+  box-shadow: var(--card-shadow-hover);
+}
+.card-title {
+  color: var(--text);
+}
+.card-desc {
+  color: var(--text-2);
+}
+
+/* ---------- Tags & badges ---------- */
+.tag {
+  background: var(--surface-2);
+  color: var(--text-2);
+  border: 1px solid var(--border);
+}
+.badge-accent {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+}
+.badge-progress {
+  background: var(--progress-soft);
+  color: var(--progress);
+}
+.status-dot {
+  background: var(--success);
+}
+
+/* ---------- Labels, dates, dividers ---------- */
+.mono-label {
+  color: var(--text-muted);
+}
+hr, .divider {
+  border-color: var(--border);
+}
+.timeline-dot {
+  background: var(--accent);
+}
+.timeline-line {
+  background: var(--border-strong);
+}
+
+/* ---------- Backgrounds & effects ---------- */
+.hero-bg {
+  background-image: var(--hero-glow);
+}
+.grid-bg {
+  background-size: 48px 48px;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 60%, transparent 100%);
+}
+.scroll-progress {
+  background: var(--gradient-accent);
+}
+
+/* ---------- Typography styles ---------- */
 .text-h1 {
   font-size: clamp(2.5rem, 6vw, 4.25rem);
   font-weight: 600;
@@ -79,7 +246,7 @@ body {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--muted);
+  color: var(--text-muted);
 }
 
 .chip-mono {
@@ -87,27 +254,14 @@ body {
   font-size: 12px;
   border-radius: 6px;
   padding: 3px 8px;
+  background-color: var(--surface);
+  color: var(--text-2);
   border: 1px solid var(--border);
   transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
 }
 
 .chip-mono:hover {
-  border-color: var(--accent);
-  background-color: var(--accent-soft);
-}
-
-/* Hero background faint grid */
-.hero-grid {
-  background-size: 48px 48px;
-  background-image: 
-    linear-gradient(to right, rgba(15, 23, 42, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 60%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 60%, transparent 100%);
-}
-
-.dark .hero-grid {
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  border-color: var(--accent-border);
+  background-color: var(--surface-2);
+  color: var(--text);
 }

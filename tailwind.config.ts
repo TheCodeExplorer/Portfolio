@@ -12,16 +12,29 @@ const config: Config = {
       colors: {
         bg: "var(--bg)",
         surface: "var(--surface)",
+        "surface-2": "var(--surface-2)",
         border: "var(--border)",
+        "border-strong": "var(--border-strong)",
         text: "var(--text)",
         "text-2": "var(--text-2)",
-        muted: "var(--muted)",
+        "text-muted": "var(--text-muted)",
+        muted: "var(--text-muted)",
         accent: {
           DEFAULT: "var(--accent)",
           hover: "var(--accent-hover)",
+          active: "var(--accent-active)",
           soft: "var(--accent-soft)",
+          border: "var(--accent-border)",
         },
-        success: "var(--success)",
+        "on-accent": "var(--on-accent)",
+        success: {
+          DEFAULT: "var(--success)",
+          soft: "var(--success-soft)",
+        },
+        progress: {
+          DEFAULT: "var(--progress)",
+          soft: "var(--progress-soft)",
+        },
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "sans-serif"],
